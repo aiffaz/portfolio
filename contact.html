@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <title>Contact</title>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo" src="asset/index.mp4" type="video/mp4"></video>
+    <div class="box4">
+        <nav>
+            <ul>  
+                <li><a href="work.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+        <p class="p4"><b>Contact...</b></p> 
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="txtbox4">
+        <form action="/action_page.php">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name..">
+            
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Your email..">
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+            
+            <input type="submit" value="Submit">
+        </form>         
+    </div>
+    
+    <!--class p1-->
+    <script>
+        var textWrapper = document.querySelector('.p4');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+        .add({
+            targets: '.p4 .letter',
+            opacity: [0,1],
+            easing: "easeInOutQuad",
+            duration: 2250,
+            delay: (el, i) => 150 * (i+1)
+        }).add({
+            targets: '.p4',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+    </script>
+</body>
+</html>

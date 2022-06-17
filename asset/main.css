@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+/*
+.cursor {
+    cursor: url(asset/cursor.png), pointer;
+}*/
+
+#myVideo {
+    position: fixed; /*The element is positioned relative to the browser window*/
+    min-width: 100%;
+    min-height: 100%;
+}
+/*transparent box*/
+.box1 {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.30; /*level of transparent*/
+    background-color: #000000;
+}
+
+.box4 {
+    position: fixed;
+    padding-top: 8px;
+    min-width: 100%;
+    opacity: 0.30; /*level of transparent*/
+    background-color: #000000;
+}
+/*pink box*/
+.txtbox4 {
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 10px 10px;
+    width: 50%;
+    opacity: 0.95;
+    background-color: #FFB6C1;
+    margin: auto;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 550;
+    font-size: 25px;
+    color: #000000;
+    animation: zoomin 2s linear 1;
+    animation-delay: 1s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoomin {
+    0% {
+        transform: scale(0.5);
+        visibility: visible;
+    }
+    100% {
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+/*paraghraph*/
+.p1 {
+    font-family: 'Dancing Script', cursive;
+    padding: 250px; /*every edge paddings are 25px*/
+    font-size: 150px;   
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.p4 {
+    font-family: 'Dancing Script', cursive;
+    padding: 10px; /*every edge paddings are 25px*/
+    font-size: 90px;   
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+}
+/*menu buttton*/
+nav {
+    flex: 1;
+    padding-right: 30px;
+    animation: movedown 1s linear 1;
+    animation-delay: 1s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes movedown {
+    0% {
+        transform: translateY(-100px);
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+ol, ul {
+    list-style: none;
+}
+li {
+    padding: 18px 0 18px;
+    display: inline-block;
+    float: right;
+}
+a:hover, a:focus, a:active {
+    color: #FFB6C1;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+    transition: color 0.1s, background-color 0.1s;
+}
+a {
+    position: relative;
+    display: block;
+    padding: 16px 10px;
+    margin: 0 12px;
+    letter-spacing: 1px;
+    font-size: 25px;
+    font-weight: 450;
+    line-height: 16px;
+    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
+    color: #FFFFFF;
+    font-family: 'Quicksand', sans-serif;
+}
+a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #FFB6C1;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s,transform 0.2s ease-out;
+}
+a:active::before {
+    background-color: #FFB6C1;
+}
+a:hover::before, a:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+/*contact*/
+input[type=text], input[type=email], select, textarea {
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    padding: 12px;
+    font-size: 20px;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+  
+  input[type=submit] {
+    background-color: #A0522D;
+    color: #000000;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif; 
+    font-weight: 550;
+    font-size: 20px;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #FFB6C1;
+  }
+  
+  /*slideshows*/
+  .mySlides {
+    display: none;
+  }
+
+  .button {
+    border: none;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif; ;
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .myButton {
+    border-radius: 50%;
+  }
+
+  
+
+  

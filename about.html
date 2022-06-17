@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <title>About</title>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo" src="asset/index.mp4" type="video/mp4"></video>
+    <div class="box4">
+        <nav>
+            <ul>           
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+        <p class="p4"><b>About...</b></p> 
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="txtbox4">
+        <center>
+        <img class="mySlides" src="asset/Resume - Aiffa Shahira-1.png" style="height:85%">
+        <img class="mySlides" src="asset/Resume - Aiffa Shahira-2.png" style="height:85%">
+        <br>
+        <button class="button myButton" onclick="plusDivs(-1)"> < </button>
+        <button class="button myButton" onclick="plusDivs(1)"> > </button>
+        </center>
+        
+    </div>
+    <!--slideshows-->
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-red", "");
+        }
+        x[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " w3-red";
+}
+    </script>
+    <!--class p1-->
+    <script>
+        var textWrapper = document.querySelector('.p4');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+        .add({
+            targets: '.p4 .letter',
+            opacity: [0,1],
+            easing: "easeInOutQuad",
+            duration: 2250,
+            delay: (el, i) => 150 * (i+1)
+        }).add({
+            targets: '.p4',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+    </script>
+</body>
+</html>
